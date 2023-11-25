@@ -11,9 +11,9 @@ class Gearer
     const API_URL = 'https://gateway.gear.mycelium.com';
 
 
-    public $gatewayId;
-    public $gatewaySecret;
-    public $client;
+    public mixed $gatewayId;
+    public mixed $gatewaySecret;
+    public Client $client;
 
     public function __construct()
     {
@@ -60,7 +60,7 @@ class Gearer
         return $this->makeRequest('GET', $url);
     }
 
-    public function handleOrderStatusCallback(?Request $request = null)
+    public function handleOrderStatusCallback(?Request $request = null): false|array
     {
         $request = $request ?: request();
 

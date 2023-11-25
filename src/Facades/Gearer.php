@@ -7,7 +7,7 @@ use Illuminate\Support\Facades\Facade;
 class Gearer extends Facade
 {
 
-    protected static function getFacadeAccessor()
+    protected static function getFacadeAccessor(): string
     {
         return 'gearer';
     }
